@@ -94,6 +94,17 @@ You can also check out this nice [working implementation](https://github.com/scr
   behavior. If you want total control over handling these errors and optionally
   aborting parsing the feed, use this option.
 
+- `strip_title_html` - Set to `true` to override Feedparser's default behavior, which is
+  to pass through all substrings that look like html from title. In older versions, we always
+  stripped these html-like substrings to help users avoid inadvertently creating
+  XSS vulnerabilities by reflecting the value of these elements without properly
+  escaping them.
+
+- `strip_desc_html` - Set to `true` to override Feedparser's default behavior, which is
+  to pass through all substrings that look like html from description. In older versions, we always
+  stripped these html-like substrings to help users avoid inadvertently creating
+  XSS vulnerabilities by reflecting the value of these elements without properly
+  escaping them.
 ## Examples
 
 See the [`examples`](examples/) directory.
